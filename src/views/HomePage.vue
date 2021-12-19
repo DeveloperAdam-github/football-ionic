@@ -1,67 +1,78 @@
 <template>
-  <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="p-2 flex flex-col">
+    <!-- <top-bar /> -->
+    <!-- FIRST CAROUSEL -->
+    <div class="w-full h-20 carousel flex items-center pl-5 overflow-scroll">
+      <div
+        class="carousel-item rounded-3xl cursor-pointer h-7 p-2 px-3 bg-pink flex text-sm font-bold items-center mx-3"
+      >
+        <p class="flex items-center">
+          <img
+            class="h-8 mr-2"
+            src="../assets/images/premier-league-1.svg"
+          />Premier League
+        </p>
       </div>
-    </ion-content>
-  </ion-page>
+      <div
+        class="carousel-item rounded-3xl h-7 p-2 px-3 bg-white text-gray-400 dark:bg-fourth dark:text-white text-sm font-bold flex items-center mx-3"
+      >
+        <p class="flex items-center">
+          <img class="h-8 mr-2" src="../assets/images/la-liga-logo.svg" />La
+          Liga
+        </p>
+      </div>
+      <div
+        class="carousel-item rounded-3xl h-7 p-2 bg-white text-gray-400 dark:bg-fourth dark:text-white text-sm font-bold flex items-center mx-3"
+      >
+        <p class="flex items-center">French League</p>
+      </div>
+      <div
+        class="carousel-item rounded-3xl h-7 cursor-pointer p-2 bg-white text-gray-400 dark:bg-fourth dark:text-white text-sm font-bold flex items-center mx-3"
+      >
+        <p class="flex items-center">
+          <img
+            class="h-8 mr-2"
+            src="../assets/images/uefa-champions-league-1.svg"
+            alt=""
+          />Champions League
+        </p>
+      </div>
+    </div>
+    <!-- FIRST CAROUSEL END -->
+
+    <h2
+      @click="$emit('darkMode')"
+      class="text-black dark:text-white font-headline text-md"
+    >
+      Live Matches
+    </h2>
+    <!-- SECOND CAROUSEL -->
+    <div class="h-60 p-2 w-full carousel flex items-center overflow-scroll">
+      <game-card />
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar
-  }
-});
+<script>
+import GameCard from '../components/HomePage-Components/GameCard.vue';
+// import TopBar from '../components/TopBar.vue';
+export default {
+  components: { GameCard },
+};
 </script>
 
 <style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
+/* .game-card {
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(1, 1, 1, 0.2),
+      rgba(1, 1, 1, 0.4)
+    ),
+    url(https://wallpaperaccess.com/full/1401210.jpg);
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+} */
 </style>
