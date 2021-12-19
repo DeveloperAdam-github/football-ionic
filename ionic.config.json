@@ -1,0 +1,7 @@
+{
+  "name": "football-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
