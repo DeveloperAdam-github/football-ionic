@@ -13,6 +13,7 @@ import '@ionic/vue/css/normalize.css';
 import '@ionic/vue/css/structure.css';
 import '@ionic/vue/css/typography.css';
 import store from './store'
+import './registerServiceWorker'
 
 /* Optional CSS utils that can be commented out */
 // import '@ionic/vue/css/padding.css';
