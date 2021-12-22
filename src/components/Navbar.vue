@@ -32,11 +32,13 @@
         :to="{ name: 'StatsPage' }"
       >
         <span class="text-gray-400 dark:text-white">
-          <ion-icon :icon="home" class="text-2xl"></ion-icon>
+          <ion-icon :icon="statsChart" class="text-2xl"></ion-icon>
         </span>
         <span class="h-6 text-3xl leading-3 opacity-0">&#183;</span>
       </router-link>
     </div>
+
+    <!-- <ion-icon name="stats-chart-outline"></ion-icon> -->
 
     <div class="">
       <router-link
@@ -54,7 +56,7 @@
 
 <script>
 import { IonIcon } from '@ionic/vue';
-import { calendar, home } from 'ionicons/icons';
+import { calendar, home, statsChart } from 'ionicons/icons';
 
 export default {
   name: 'navbar-component',
@@ -65,6 +67,7 @@ export default {
     return {
       calendar,
       home,
+      statsChart,
     };
   },
 };
@@ -79,7 +82,7 @@ export default {
   align-items: center;
 } */
 .router-link-active {
-  color: #fe2782;
+  color: #793ef9;
   font-weight: bold;
 
   transition: all 0.3s linear;
@@ -87,6 +90,6 @@ export default {
 
 .router-link-active span {
   opacity: 100;
-  color: #fe2782;
+  color: #793ef9;
 }
 </style>

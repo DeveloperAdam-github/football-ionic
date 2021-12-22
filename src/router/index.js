@@ -14,6 +14,7 @@ const routes = [
     path: '/stats',
     name: 'StatsPage',
     component: StatsPage,
+    props: true,
   },
   {
     path: '/profile',

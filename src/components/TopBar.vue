@@ -1,11 +1,14 @@
 <template>
-  <div class="h-8vh p-2 items-center flex justify-between bg-">
+  <div
+    class="h-8vh p-3 px-5 items-center flex justify-between z-50 relative bg-transparent"
+  >
+    <!-- bg-gray-200 dark:bg-primary -->
     <div>
-      <div class="h-10 w-10 rounded-full">
+      <div class="h-9 w-9 rounded-full">
         <img
           src="https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
           alt=""
-          class="h-10 w-10 object-cover rounded-full"
+          class="h-9 w-9 object-cover rounded-full"
         />
       </div>
     </div>
@@ -13,7 +16,7 @@
     <div>
       <div>
         <p
-          class="text-lg text-gray-700 dark:text-white font-bold flex items-center font-boldHeadline"
+          class="text-lg text-gray-500 dark:text-white font-bold flex items-center font-boldHeadline"
         >
           LiveSc
           <span class="text-pink">

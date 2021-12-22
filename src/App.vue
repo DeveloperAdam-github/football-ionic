@@ -1,14 +1,16 @@
 <template>
-  <div
-    class="h-screen w-screen bg-white dark:bg-primary"
-    :class="darkMode ? 'dark' : 'light'"
-  >
-    <top-bar @darkMode="toggleDarkMode" class="bg-gray-200 dark:bg-primary" />
-    <router-view
-      @darkMode="toggleDarkMode"
-      class="h-82vh bg-gray-200 dark:bg-primary"
-    />
-    <navbar @darkMode="toggleDarkMode" />
+  <div :class="darkMode ? 'dark' : 'light'">
+    <div
+      class="h-screen w-screen bg-gray-200 dark:bg-primary overflow-scroll absolute"
+      :class="darkMode ? 'dark' : 'light'"
+    >
+      <top-bar @darkMode="toggleDarkMode" class="z-50" />
+      <router-view
+        @darkMode="toggleDarkMode"
+        class="h-82vh bg-gray-200 dark:bg-primary z-10"
+      />
+      <navbar @darkMode="toggleDarkMode" />
+    </div>
   </div>
 </template>
 
@@ -35,6 +37,48 @@ export default defineComponent({
       console.log('clicked');
       this.darkMode = !this.darkMode;
     },
+    getFixtures() {
+      this.$store.dispatch('getGameFixtures');
+    },
+    getUpcomingFixtures() {
+      this.$store.dispatch('getUpcomingFixtures');
+    },
+    getLaLigaGames() {
+      this.$store.dispatch('getLaLigaGames');
+    },
+    getUpcomingLaLigaGames() {
+      this.$store.dispatch('getUpcomingLaLigaFixtures');
+    },
+    getLigueOneGames() {
+      this.$store.dispatch('getLigueOneFixtures');
+    },
+    getUpcomingLigueOneGames() {
+      this.$store.dispatch('getUpcomingLigueOneFixtures');
+    },
+    getChampionsLeagueGames() {
+      this.$store.dispatch('getChampionsLeagueFixtures');
+    },
+    getUpcomingChampionsLeagueGames() {
+      this.$store.dispatch('getUpcomingChampionsLeagueFixtures');
+    },
+    getEuropaLeagueGames() {
+      this.$store.dispatch('getEuropaLeagueFixtures');
+    },
+    getUpcomingEuropaLeagueGames() {
+      this.$store.dispatch('getUpcomingEuropaLeagueFixtures');
+    },
+  },
+  created() {
+    this.getFixtures();
+    this.getUpcomingFixtures();
+    this.getLaLigaGames();
+    this.getUpcomingLaLigaGames();
+    this.getLigueOneGames();
+    this.getUpcomingLigueOneGames();
+    this.getChampionsLeagueGames();
+    this.getUpcomingChampionsLeagueGames();
+    this.getEuropaLeagueGames();
+    this.getUpcomingEuropaLeagueGames();
   },
 });
 </script>
